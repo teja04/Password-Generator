@@ -6,25 +6,26 @@ import crypt
 #crypt module use to encrypt any word using salt
 
 def password_genarator():
-    password_size = int(input("Enter the length of password :")
-    if password_size >= 8:
-        combine = string.ascii_letters + string.digits + string.punctuation
-        #ascii_letters gives lower case and upper case alphabets
-        #if you want only lower case you can code ascii_lowercase similary ascii_uppercase for upper case alphabets
-        #string.digits gives numbers from 0 to 9
-        #string.punctuation gives all the symbols
+    password_size = input("Enter the length of password :")
+    if password_size == int:
+        if password_size >= 8:
+            combine = string.ascii_letters + string.digits + string.punctuation
+            #ascii_letters gives lower case and upper case alphabets
+            #if you want only lower case you can code ascii_lowercase similary ascii_uppercase for upper case alphabets
+            #string.digits gives numbers from 0 to 9
+            #string.punctuation gives all the symbols
 
-        password = " " #password name define
+            password = " " #password name define
 
-        for i in range(password_size):
-            password = password + random.choice(combine) #random.choice will select randomly from combination of all
+            for i in range(password_size):
+                password = password + random.choice(combine) #random.choice will select randomly from combination of all
 
-        print(password)
-    elif password_size < 8:
-        print("Password length should be greater than 8")
-        return password_genarator() #return command used for recursive function
+            print(password)
+        elif password_size < 8:
+            print("Password length should be greater than 8")
+            return password_genarator() #return command used for recursive function
     else:
-        print("Password size is small\nEnter again")
+        print("Invalid Input\nEnter again")
         return password_genarator() #return command used for recursive function
 
 
