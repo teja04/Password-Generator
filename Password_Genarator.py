@@ -6,7 +6,7 @@ import crypt
 #crypt module use to encrypt any word using salt
 
 def password_genarator():
-    password_size = int(input("Enter the length of password :"))
+    password_size = int(input("Enter the length of password :")
     if password_size >= 8:
         combine = string.ascii_letters + string.digits + string.punctuation
         #ascii_letters gives lower case and upper case alphabets
@@ -20,6 +20,9 @@ def password_genarator():
             password = password + random.choice(combine) #random.choice will select randomly from combination of all
 
         print(password)
+    elif password_size < 8:
+        print("Password length should be greater than 8")
+        return password_genarator() #return command used for recursive function
     else:
         print("Password size is small\nEnter again")
         return password_genarator() #return command used for recursive function
